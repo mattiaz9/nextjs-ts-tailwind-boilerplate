@@ -1,0 +1,112 @@
+$btn-colors: (
+  // modifier           background                        background active                 text
+  Primary theme("colors.accent.DEFAULT") theme("colors.accent.dark")
+    theme("colors.white"),
+  Secondary theme("colors.black") theme("colors.gray.800") theme("colors.white"),
+  Tertiary theme("colors.gray.300") theme("colors.gray.400")
+    theme("colors.gray.500"),
+  Warning theme("colors.yellow.500") theme("colors.yellow.600")
+    theme("colors.white"),
+  Danger theme("colors.red.500") theme("colors.red.600") theme("colors.white")
+);
+
+.button {
+  @apply inline-flex items-center justify-center;
+  @apply transition-colors duration-75;
+  @apply font-semibold text-center tracking-tight;
+  @apply cursor-pointer;
+  @apply rounded-lg;
+  text-decoration: none !important;
+
+  svg {
+    @apply h-[1.2em];
+    @apply mr-3;
+
+    &.buttonSpinner {
+      @apply h-[1.4em] mr-0;
+    }
+  }
+
+  span {
+    // assuming is text
+    @apply pt-0.5; // Fix font baseline
+  }
+
+  &:disabled {
+    @apply opacity-10 pointer-events-none cursor-default;
+    @apply saturate-0;
+  }
+}
+
+// Sizes
+.buttonDefault {
+  @apply py-2 px-6;
+  @apply text-sm tracking-wide;
+}
+
+.buttonSmall {
+  @apply px-5 py-2;
+  @apply text-xs normal-case;
+}
+
+.buttonLarge {
+  @apply px-8 py-3;
+  @apply text-base normal-case;
+}
+
+.buttonRounded {
+  @apply rounded-full;
+}
+
+.buttonExpanded {
+  @apply w-full;
+}
+
+// Aspect
+@each $modifier, $bg-color, $bg-color-active, $text-color in $btn-colors {
+  .buttonFill {
+    &.button#{$modifier} {
+      background-color: $bg-color;
+      border: 1px solid $bg-color;
+      color: $text-color;
+      &:hover {
+        color: $text-color !important;
+      }
+      &:active {
+        background-color: $bg-color-active;
+        border-color: $bg-color-active;
+      }
+    }
+  }
+  .buttonOutline {
+    &.button#{$modifier} {
+      background-color: transparent;
+      border: 1px solid $bg-color;
+      color: $bg-color;
+      &:hover {
+        color: $bg-color !important;
+      }
+      &:active {
+        border-color: $bg-color-active;
+        color: $bg-color-active;
+      }
+    }
+  }
+  .buttonEmpty {
+    @apply h-14 min-w-0;
+
+    &.button#{$modifier} {
+      color: $bg-color;
+      &:hover {
+        color: $bg-color !important;
+      }
+      &:active {
+        color: $bg-color-active;
+      }
+    }
+
+    svg {
+      @apply h-full mr-0;
+    }
+  }
+}

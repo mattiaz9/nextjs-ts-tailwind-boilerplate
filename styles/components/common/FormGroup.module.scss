@@ -1,0 +1,27 @@
+.formGroup {
+  @apply w-full;
+
+  &.half {
+    @apply md:w-1/2;
+    @apply md:flex-1;
+
+    & + & {
+      @apply md:ml-8;
+    }
+  }
+
+  &:not(:last-child) {
+    @apply mb-6;
+  }
+
+  label {
+    @apply text-xs font-medium uppercase;
+    @apply tracking-wider;
+    @apply mb-4;
+    @apply block w-full;
+  }
+}
+
+.formGroupContent {
+  @apply w-full;
+}

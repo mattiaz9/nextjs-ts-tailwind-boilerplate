@@ -1,0 +1,33 @@
+.cookiesSettingsGroup {
+  @apply relative bg-white rounded-xl shadow-sm;
+  @apply border border-gray-200;
+  @apply p-4 lg:p-6;
+}
+
+.cookiesSettingsGroupTitle {
+  @apply text-2xl font-semibold;
+  @apply mb-1;
+}
+
+.cookiesSettingsGroupDescription {
+  @apply text-sm text-gray-400;
+}
+
+.cookiesSettingsGroupContent {
+  @apply my-6 lg:my-8 space-y-3;
+}
+
+.cookiesSettingsGroupFooter {
+  @apply text-sm;
+  @apply flex flex-col flex-wrap items-center justify-between;
+  @apply md:flex-row;
+}
+
+.cookiesSettingsGroupExpiration {
+  @apply flex flex-wrap items-center;
+}
+
+.cookiesSettingsGroupSaveMessage {
+  @apply absolute bottom-2 right-4 lg:right-6;
+  @apply text-xs text-green-600;
+}

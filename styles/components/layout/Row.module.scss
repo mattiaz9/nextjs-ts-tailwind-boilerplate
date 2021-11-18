@@ -1,0 +1,10 @@
+.row {
+  @apply flex flex-wrap;
+  @apply -mx-3 md:-mx-6 xl:-mx-8;
+
+  > * {
+    @apply flex-shrink-0;
+    @apply max-w-full;
+    @apply px-3 md:px-6 xl:px-8;
+  }
+}

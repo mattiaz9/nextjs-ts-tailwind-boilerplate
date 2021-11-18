@@ -1,0 +1,26 @@
+.cookieBanner {
+  @apply fixed bottom-0 left-1/2 -translate-x-1/2;
+  @apply w-full max-w-4xl z-1;
+  @apply bg-white rounded-xl shadow-lg;
+  @apply flex flex-col sm:flex-row sm:items-center;
+  @apply p-4 md:p-6;
+  @apply translate-y-full;
+  @apply transition-transform duration-300 ease-out;
+
+  &.show {
+    @apply -translate-y-4;
+  }
+}
+
+.cookieBannerMessage {
+  @apply text-gray-600;
+}
+
+.cookieBannerActions {
+  @apply ml-auto flex-shrink-0;
+  @apply space-x-3;
+
+  .cookieBannerActionDeny {
+    @apply bg-accent-light/75 border-accent-light/75;
+  }
+}

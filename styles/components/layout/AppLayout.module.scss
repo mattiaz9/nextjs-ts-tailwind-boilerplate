@@ -1,0 +1,11 @@
+.appLayout {
+  @apply relative;
+  @apply flex flex-col;
+  @apply min-h-screen;
+
+  main {
+    @apply flex-grow;
+    @apply flex flex-col;
+    @apply pt-16;
+  }
+}

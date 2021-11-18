@@ -1,0 +1,13 @@
+.col {
+  @apply flex-grow;
+
+  &.vPadding {
+    @apply py-6;
+  }
+  &.vPaddingXs {
+    @apply py-6 md:py-0;
+  }
+  &.vPaddingMd {
+    @apply md:py-6 lg:py-0;
+  }
+}

@@ -1,0 +1,38 @@
+.toggle {
+  @apply flex items-center justify-between;
+}
+
+.toggleInfo {
+  @apply flex-grow flex flex-col;
+}
+
+.toggleTitle {
+  @apply text-sm font-medium text-gray-900;
+}
+
+.toggleDescription {
+  @apply text-sm text-gray-500;
+}
+
+.toggleSwitch {
+  @apply relative inline-flex flex-shrink-0;
+  @apply h-6 w-11;
+  @apply bg-gray-200 border-2 border-transparent rounded-full cursor-pointer;
+  @apply transition-colors ease-in-out duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+
+  .toggled & {
+    @apply bg-blue-600;
+  }
+}
+
+.toggleKnob {
+  @apply pointer-events-none inline-block h-5 w-5;
+  @apply rounded-full bg-white shadow;
+  @apply transform translate-x-0 ring-0;
+  @apply transition ease-in-out duration-200;
+
+  .toggled & {
+    @apply translate-x-5;
+  }
+}

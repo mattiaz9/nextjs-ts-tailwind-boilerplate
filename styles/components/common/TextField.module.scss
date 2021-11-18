@@ -1,0 +1,10 @@
+.textField {
+  @apply w-full;
+  @apply appearance-none;
+  @apply border border-gray-200;
+  @apply px-4 py-2.5 rounded-lg;
+  @apply transition-shadow duration-300;
+  @apply focus:outline-none;
+  @apply focus:ring-4 ring-accent;
+  @apply disabled:opacity-50 disabled:pointer-events-none disabled:cursor-default;
+}

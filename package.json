@@ -1,0 +1,49 @@
+{
+  "name": "recipenutritioncalculator",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "1.4.2",
+    "@sendgrid/mail": "7.6.0",
+    "axios": "0.24.0",
+    "body-scroll-lock": "4.0.0-beta.0",
+    "classnames": "2.3.1",
+    "dayjs": "1.10.7",
+    "graphql": "16.0.1",
+    "graphql-request": "3.6.1",
+    "micro-down": "1.6.2",
+    "next": "12.0.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-gtm-module": "2.0.11",
+    "react-schemaorg": "2.0.0",
+    "schema-dts": "1.0.0",
+    "scroll-to-element": "^2.0.3"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "^0.4.1",
+    "@types/body-scroll-lock": "^3.1.0",
+    "@types/node": "16.11.7",
+    "@types/react": "17.0.35",
+    "@types/react-gtm-module": "^2.0.1",
+    "@types/scroll-to-element": "^2.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.2.0",
+    "eslint-config-next": "^12.0.4",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.0",
+    "sass": "^1.43.4",
+    "tailwindcss": "^2.2.19",
+    "tailwindcss-scroll-snap": "^1.1.0",
+    "typescript": "4.5.2",
+    "typescript-plugin-css-modules": "3.4.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "scss.validate": false,
+  "css.validate": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "path-autocomplete.pathMappings": {
+    "@assets": "${folder}/src/assets",
+    "@components": "${folder}/src/components",
+    "@context": "${folder}/src/context",
+    "@queries": "${folder}/src/queries",
+    "@hooks": "${folder}/src/hooks",
+    "@pages": "${folder}/pages",
+    "@types": "${folder}/src/types",
+    "@styles": "${folder}/styles",
+    "@utils": "${folder}/src/utils"
+  },
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[scss]": {
+    "tailwindCSS.validate": true
+  },
+  "svg.preview.background": "transparent"
+}

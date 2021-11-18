@@ -1,0 +1,12 @@
+.navbarLink {
+  @apply text-sm font-semibold;
+  @apply py-2.5 sm:py-1.5 px-4 rounded;
+  @apply bg-transparent;
+  @apply transition-colors duration-300 ease-out;
+  @apply text-gray-900;
+  @apply hover:bg-accent/10 active:bg-accent/10;
+
+  &.active {
+    @apply text-accent;
+  }
+}
