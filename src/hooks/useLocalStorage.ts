@@ -11,13 +11,25 @@ const useLocalStorage = <T>(
   defaultValue: T | null = null
 ): [T | null | undefined, (value: T) => void, () => void] => {
   const localStorage = typeof window !== "undefined" ? window.localStorage : null
-
   const [storedValue, setStoredValue] = useState<T | null | undefined>(defaultValue || undefined)
 
   useEffect(() => {
     setStoredValue(getValue())
+
+    window.addEventListener("storage", onStorageUpdate)
+
+    return () => {
+      window.removeEventListener("storage", onStorageUpdate)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  const onStorageUpdate = () => {
+    const newValue = getValue()
+    if (newValue !== storedValue) {
+      setStoredValue(newValue)
+    }
+  }
 
   const getValue = () => {
     try {
