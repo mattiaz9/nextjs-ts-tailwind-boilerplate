@@ -8,3 +8,8 @@
   @apply focus:ring-4 ring-accent;
   @apply disabled:opacity-50 disabled:pointer-events-none disabled:cursor-default;
 }
+
+.textFieldError {
+  @apply text-xs font-medium;
+  @apply text-red-600;
+}
