@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 
 import classes from "@styles/components/common/CookieBanner.module.scss"
@@ -11,12 +11,17 @@ const CookieBanner: React.FC = () => {
   const { toggleTagManagerEnabled } = useCookiesSettings()
   const [cookieBannerShown, setCookieBannerShown] = useLocalStorage("setting:cb-shown", false)
   const [show, setShow] = useState(false)
+  const timeout = useRef<number>()
 
   useEffect(() => {
     if (!cookieBannerShown) {
-      setTimeout(() => {
+      timeout.current = setTimeout(() => {
         setShow(true)
-      }, 100)
+      }, 100) as unknown as number
+    }
+
+    return () => {
+      clearTimeout(timeout.current)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
