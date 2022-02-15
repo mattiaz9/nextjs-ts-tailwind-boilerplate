@@ -1,16 +1,10 @@
-const colors = require("tailwindcss/colors")
 const plugin = require("tailwindcss/plugin")
 
 module.exports = {
-  purge: {
-    content: [
-      "./src/components/**/*.tsx",
-      "./pages/**/*.tsx"
-    ],
-    options: {
-      safelist: ["dark"]
-    },
-  },
+  content: [
+    "./src/components/**/*.tsx",
+    "./pages/**/*.tsx"
+  ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
@@ -23,19 +17,7 @@ module.exports = {
         "2xl": "1536px",
       },
       colors: {
-        transparent: "transparent",
-        current: "currentColor",
         accent: "#3482F6",
-        black: colors.black,
-        white: colors.white,
-        gray: colors.coolGray,
-        red: colors.red,
-        yellow: colors.amber,
-        green: colors.emerald,
-        blue: colors.blue,
-        indigo: colors.indigo,
-        purple: colors.violet,
-        pink: colors.pink,
       },
     },
   },
@@ -45,7 +27,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
-    require("tailwindcss-scroll-snap"),
     plugin(function ({ addUtilities, theme }) {
       const utils = {
         ".absolute-center": {
