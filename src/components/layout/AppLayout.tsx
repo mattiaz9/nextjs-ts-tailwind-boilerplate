@@ -5,6 +5,7 @@ import Navbar from "@components/navigation/Navbar"
 import CookieBanner from "@components/common/CookieBanner"
 
 type AppLayoutProps = {
+  children?: React.ReactNode
   pageTitle?: string
 }
 

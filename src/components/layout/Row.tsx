@@ -3,6 +3,7 @@ import classNames from "classnames"
 import classes from "@styles/components/layout/Row.module.scss"
 
 type RowProps = {
+  children?: React.ReactNode
   className?: string
 }
 

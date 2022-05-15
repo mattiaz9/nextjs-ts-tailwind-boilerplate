@@ -6,6 +6,7 @@ import classes from "@styles/components/navigation/NavbarLink.module.scss"
 import Link from "@components/common/Link"
 
 type NavbarLinkProps = {
+  children?: React.ReactNode
   to: string
   exact?: boolean
 }

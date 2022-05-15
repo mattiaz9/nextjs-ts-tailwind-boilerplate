@@ -3,6 +3,7 @@ import classNames from "classnames"
 import classes from "@styles/components/layout/Col.module.scss"
 
 type ColProps = {
+  children?: React.ReactNode
   as?: React.ElementType
   className?: string
   verticalPadding?: boolean

@@ -6,6 +6,7 @@ import Button from "@components/common/Button"
 import Select from "@components/common/Select"
 
 type CookieSettingsGroupProps = {
+  children?: React.ReactNode
   title: string
   description?: string
   onSave?(expirationTime: number): void

@@ -3,6 +3,7 @@ import classNames from "classnames"
 import classes from "@styles/components/layout/Container.module.scss"
 
 type ContainerProps = {
+  children?: React.ReactNode
   className?: string
 }
 

@@ -3,9 +3,11 @@ import classNames from "classnames"
 
 import classes from "@styles/components/common/Button.module.scss"
 import Spinner from "@assets/animated/spinner.svg"
+
 import Link from "./Link"
 
 type ButtonProps = {
+  children?: React.ReactNode
   as?: React.ElementType
   href?: string
   hrefRedirect?: string

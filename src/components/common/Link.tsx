@@ -5,6 +5,7 @@ import Router from "next/router"
 import smoothScrollLink from "@utils/smooth-scroll"
 
 type LinkProps = {
+  children?: React.ReactNode
   to: string
   className?: string
   rel?: string

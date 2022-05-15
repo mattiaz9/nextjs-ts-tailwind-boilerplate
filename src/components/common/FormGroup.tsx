@@ -2,6 +2,7 @@ import classes from "@styles/components/common/FormGroup.module.scss"
 import classNames from "classnames"
 
 type FormGroupProps = {
+  children?: React.ReactNode
   label?: string
   labelFor?: string
   required?: boolean
