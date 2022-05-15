@@ -2,9 +2,6 @@
   "scss.validate": false,
   "css.validate": false,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
   "path-autocomplete.pathMappings": {
     "@assets": "${folder}/src/assets",
     "@components": "${folder}/src/components",
@@ -18,16 +15,16 @@
   },
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "tailwindCSS.validate": true
-  },
-  "svg.preview.background": "transparent"
+  }
 }

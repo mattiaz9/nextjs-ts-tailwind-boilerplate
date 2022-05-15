@@ -13,7 +13,7 @@ type CookiesPreferencesGroups = keyof CookiesPreferences
 type InferNestedKeys<T extends object, G extends keyof T> = keyof T[G]
 
 const defaultPreferences: CookiesPreferences = {
-  analytics: {}
+  analytics: {},
 }
 
 const settingsValue = <G extends CookiesPreferencesGroups>(
@@ -24,7 +24,7 @@ const settingsValue = <G extends CookiesPreferencesGroups>(
   if (preferences == null) return preferences
 
   const groupSettings = preferences?.[group]
-  const groupExpiration = groupSettings?.expiration ?? +(new Date())
+  const groupExpiration = groupSettings?.expiration ?? +new Date()
   if (new Date(groupExpiration) < new Date()) {
     return null
   }
@@ -34,7 +34,9 @@ const settingsValue = <G extends CookiesPreferencesGroups>(
 
 export default function useCookiesSettings() {
   const [preferences, setPreferences] = useLocalStorage<CookiesPreferences>("cookies-settings")
-  const [tagManagerEnabled, setTagManagerEnabled] = useState(settingsValue(preferences, "analytics", "tagManagerEnabled"))
+  const [tagManagerEnabled, setTagManagerEnabled] = useState(
+    settingsValue(preferences, "analytics", "tagManagerEnabled")
+  )
 
   useEffect(() => {
     setTagManagerEnabled(settingsValue(preferences, "analytics", "tagManagerEnabled"))
@@ -54,8 +56,8 @@ export default function useCookiesSettings() {
       analytics: {
         ...(preferences?.analytics ?? {}),
         expiration: newExpiration ?? preferences?.analytics?.expiration,
-        tagManagerEnabled: enabled
-      }
+        tagManagerEnabled: enabled,
+      },
     })
   }
 
@@ -63,6 +65,6 @@ export default function useCookiesSettings() {
     preferences,
     tagManagerEnabled,
     updatePreferencesExpiration,
-    toggleTagManagerEnabled
+    toggleTagManagerEnabled,
   }
 }

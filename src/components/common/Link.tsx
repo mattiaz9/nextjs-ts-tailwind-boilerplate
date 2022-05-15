@@ -16,17 +16,7 @@ type LinkProps = {
   onClick?(e: React.MouseEvent): void
 }
 
-const Link: React.FC<LinkProps> = ({
-  children,
-  to,
-  className,
-  rel,
-  target,
-  role,
-  style,
-  smooth,
-  onClick,
-}) => {
+const Link: React.FC<LinkProps> = ({ children, to, className, rel, target, role, style, smooth, onClick }) => {
   const onLinkClick = async (e: React.MouseEvent) => {
     e.preventDefault()
 
@@ -45,27 +35,12 @@ const Link: React.FC<LinkProps> = ({
   return (
     <>
       {smooth ? (
-        <a
-          href={to}
-          className={className}
-          target={target}
-          rel={rel}
-          role={role}
-          style={style}
-          onClick={onLinkClick}
-        >
+        <a href={to} className={className} target={target} rel={rel} role={role} style={style} onClick={onLinkClick}>
           {children}
         </a>
       ) : (
         <NextLink href={to}>
-          <a
-            className={className}
-            target={target}
-            rel={rel}
-            role={role}
-            style={style}
-            onClick={onClick}
-          >
+          <a className={className} target={target} rel={rel} role={role} style={style} onClick={onClick}>
             {children}
           </a>
         </NextLink>

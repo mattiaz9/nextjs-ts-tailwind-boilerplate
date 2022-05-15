@@ -4,7 +4,7 @@ import classes from "@styles/components/common/Select.module.scss"
 
 type SelectProps = {
   value: string
-  options: Array<{ value: string, label: string }>
+  options: Array<{ value: string; label: string }>
   id?: string
   name?: string
   label?: string
@@ -12,15 +12,7 @@ type SelectProps = {
   onChange(value: string): void
 }
 
-const Select: React.FC<SelectProps> = ({
-  value,
-  options,
-  label,
-  id,
-  name,
-  smaller,
-  onChange,
-}) => {
+const Select: React.FC<SelectProps> = ({ value, options, label, id, name, smaller, onChange }) => {
   return (
     <div>
       {label && (
@@ -33,12 +25,14 @@ const Select: React.FC<SelectProps> = ({
         name={name}
         value={value}
         className={classNames(classes.select, {
-          [classes.smaller]: smaller
+          [classes.smaller]: smaller,
         })}
-        onChange={e => onChange?.(e.target.value)}
+        onChange={(e) => onChange?.(e.target.value)}
       >
         {options.map(({ label, value }) => (
-          <option value={value} key={value}>{label}</option>
+          <option value={value} key={value}>
+            {label}
+          </option>
         ))}
       </select>
     </div>

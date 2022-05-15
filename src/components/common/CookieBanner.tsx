@@ -41,23 +41,23 @@ const CookieBanner: React.FC = () => {
   }
 
   return (
-    <div className={classNames(classes.cookieBanner, {
-      [classes.show]: show
-    })}>
+    <div
+      className={classNames(classes.cookieBanner, {
+        [classes.show]: show,
+      })}
+    >
       <p
         className={classes.cookieBannerMessage}
         dangerouslySetInnerHTML={{
           __html: `This website uses cookies to improve your experience. By accepting the cookie you'll help improve this website.
-          Please check our <a href='/privacy-policy'>privacy policy</a> for more information.`
+          Please check our <a href='/privacy-policy'>privacy policy</a> for more information.`,
         }}
       />
       <div className={classes.cookieBannerActions}>
         <Button className={classes.cookieBannerActionDeny} onClick={onAcceptMandatory}>
           Deny
         </Button>
-        <Button onClick={onAcceptAll}>
-          Accept all
-        </Button>
+        <Button onClick={onAcceptAll}>Accept all</Button>
       </div>
     </div>
   )

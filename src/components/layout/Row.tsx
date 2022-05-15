@@ -8,11 +8,7 @@ type RowProps = {
 }
 
 const Row: React.FC<RowProps> = ({ children, className }) => {
-  return (
-    <div className={classNames(classes.row, className)}>
-      {children}
-    </div>
-  )
+  return <div className={classNames(classes.row, className)}>{children}</div>
 }
 
 export default Row

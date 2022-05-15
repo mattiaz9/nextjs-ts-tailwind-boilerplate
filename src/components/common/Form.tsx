@@ -10,20 +10,12 @@ type FormProps = {
   onSubmit?(e: FormEvent<HTMLFormElement>): void
 }
 
-const Form: React.FC<FormProps> = ({
-  children,
-  action,
-  method,
-  errorMessage,
-  onSubmit
-}) => {
+const Form: React.FC<FormProps> = ({ children, action, method, errorMessage, onSubmit }) => {
   return (
     <form action={action} method={method} onSubmit={onSubmit}>
       {children}
 
-      {errorMessage && (
-        <p className={classes.errorMessage}>{errorMessage}</p>
-      )}
+      {errorMessage && <p className={classes.errorMessage}>{errorMessage}</p>}
     </form>
   )
 }

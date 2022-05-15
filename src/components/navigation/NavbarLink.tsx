@@ -11,18 +11,17 @@ type NavbarLinkProps = {
   exact?: boolean
 }
 
-const NavbarLink: React.FC<NavbarLinkProps> = ({
-  children,
-  to,
-  exact,
-}) => {
+const NavbarLink: React.FC<NavbarLinkProps> = ({ children, to, exact }) => {
   const { pathname } = useRouter()
   const isActive = exact ? pathname === to : pathname.startsWith(to)
 
   return (
-    <Link to={to} className={classNames(classes.navbarLink, {
-      [classes.active]: isActive
-    })}>
+    <Link
+      to={to}
+      className={classNames(classes.navbarLink, {
+        [classes.active]: isActive,
+      })}
+    >
       {children}
     </Link>
   )

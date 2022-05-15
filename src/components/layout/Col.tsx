@@ -20,11 +20,13 @@ const Col: React.FC<ColProps> = ({
   verticalPaddingTablet,
 }) => {
   return (
-    <As className={classNames(classes.col, className, {
-      [classes.vPadding]: verticalPadding,
-      [classes.vPaddingXs]: verticalPaddingMobile,
-      [classes.vPaddingMd]: verticalPaddingTablet,
-    })}>
+    <As
+      className={classNames(classes.col, className, {
+        [classes.vPadding]: verticalPadding,
+        [classes.vPaddingXs]: verticalPaddingMobile,
+        [classes.vPaddingMd]: verticalPaddingTablet,
+      })}
+    >
       {children}
     </As>
   )

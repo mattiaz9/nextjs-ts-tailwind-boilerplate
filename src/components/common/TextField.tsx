@@ -9,8 +9,18 @@ type TextFieldProps = {
   id?: string
   name?: string
   type?: "text" | "password"
-  autocomplete?: "on" | "off" | "name" | "given-name" | "family-name" |
-  "email" | "tel" | "url" | "current-password" | "new-password" | "one-time-code"
+  autocomplete?:
+    | "on"
+    | "off"
+    | "name"
+    | "given-name"
+    | "family-name"
+    | "email"
+    | "tel"
+    | "url"
+    | "current-password"
+    | "new-password"
+    | "one-time-code"
   errorMessage?: string
   multiline?: boolean
   required?: boolean
@@ -34,18 +44,13 @@ const TextField: React.FC<TextFieldProps> = ({
   onChange,
 }) => {
   const Field: React.FC<React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>> = useMemo(
-    () => (props: React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) => (
-      <>
-        {multiline ? (
-          <textarea {...props} rows={6} />
-        ) : (
-          <input {...props} />
-        )}
-        {errorMessage && (
-          <small className={classes.textFieldError}>{errorMessage}</small>
-        )}
-      </>
-    ) as any,
+    () => (props: React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) =>
+      (
+        <>
+          {multiline ? <textarea {...props} rows={6} /> : <input {...props} />}
+          {errorMessage && <small className={classes.textFieldError}>{errorMessage}</small>}
+        </>
+      ) as any,
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [errorMessage]
   )

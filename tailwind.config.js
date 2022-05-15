@@ -1,10 +1,7 @@
 const plugin = require("tailwindcss/plugin")
 
 module.exports = {
-  content: [
-    "./src/components/**/*.tsx",
-    "./pages/**/*.tsx"
-  ],
+  content: ["./src/components/**/*.tsx", "./pages/**/*.tsx"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
@@ -30,10 +27,10 @@ module.exports = {
     plugin(function ({ addUtilities, theme }) {
       const utils = {
         ".absolute-center": {
-          "position": "absolute",
-          "left": "50%",
-          "top": "50%",
-          "transform": "translateX(-50%) translateY(-50%)",
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translateX(-50%) translateY(-50%)",
         },
       }
 

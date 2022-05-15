@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
@@ -25,44 +21,23 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@context/*": [
-        "./src/context/*"
-      ],
-      "@queries/*": [
-        "./src/queries/*"
-      ],
-      "@definitions/*": [
-        "./src/definitions/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@pages/*": [
-        "./pages/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
-      "@styles/*": [
-        "./styles/*"
-      ]
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@context/*": ["./src/context/*"],
+      "@queries/*": ["./src/queries/*"],
+      "@definitions/*": ["./src/definitions/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@pages/*": ["./pages/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./styles/*"]
     },
-    "typeRoots": [
-      "typings/"
-    ]
+    "typeRoots": ["typings/"]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }

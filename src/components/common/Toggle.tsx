@@ -10,16 +10,14 @@ type ToggleProps = {
   onChange(toggled: boolean): void
 }
 
-const Toggle: React.FC<ToggleProps> = ({
-  toggled,
-  label,
-  description,
-  onChange,
-}) => {
+const Toggle: React.FC<ToggleProps> = ({ toggled, label, description, onChange }) => {
   return (
-    <Switch.Group as="div" className={classNames(classes.toggle, {
-      [classes.toggled]: toggled
-    })}>
+    <Switch.Group
+      as="div"
+      className={classNames(classes.toggle, {
+        [classes.toggled]: toggled,
+      })}
+    >
       <span className={classes.toggleInfo}>
         <Switch.Label as="span" className={classes.toggleTitle} passive>
           {label}
@@ -31,15 +29,8 @@ const Toggle: React.FC<ToggleProps> = ({
         )}
       </span>
 
-      <Switch
-        checked={toggled}
-        onChange={onChange}
-        className={classes.toggleSwitch}
-      >
-        <span
-          aria-hidden="true"
-          className={classes.toggleKnob}
-        />
+      <Switch checked={toggled} onChange={onChange} className={classes.toggleSwitch}>
+        <span aria-hidden="true" className={classes.toggleKnob} />
       </Switch>
     </Switch.Group>
   )

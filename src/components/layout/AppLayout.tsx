@@ -16,9 +16,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children, pageTitle }) => {
 
       <Navbar />
 
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       <footer></footer>
 

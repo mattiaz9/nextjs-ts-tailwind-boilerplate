@@ -8,11 +8,7 @@ type HeadMetaProps = {
 
 const SITE_NAME = "Next.JS"
 
-const HeadMeta: React.FC<HeadMetaProps> = ({
-  title,
-  description,
-  keywords,
-}) => {
+const HeadMeta: React.FC<HeadMetaProps> = ({ title, description, keywords }) => {
   const titleSuffix = title ? ` – ${SITE_NAME}` : ""
   const pageTitle = `${title ?? SITE_NAME}${titleSuffix}`
 

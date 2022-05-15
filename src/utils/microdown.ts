@@ -9,11 +9,7 @@ import { parse } from "micro-down"
 export default function microdownEnhanced(md: string) {
   const htmls = md
     .split(/(?:\r?\n){2,}/)
-    .map(l =>
-      [" ", "\t", "#", "-", "*"].some(ch => l.startsWith(ch))
-        ? parse(l)
-        : `<p>${parse(l)}</p>`,
-    )
+    .map((l) => ([" ", "\t", "#", "-", "*"].some((ch) => l.startsWith(ch)) ? parse(l) : `<p>${parse(l)}</p>`))
 
   return htmls.join("\n\n")
 }

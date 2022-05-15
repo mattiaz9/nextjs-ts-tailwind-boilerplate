@@ -5,7 +5,11 @@ import { clamp } from "./math"
 const smoothScrollLink = (url: string) => {
   const pattern = /^(\/#.+)|(.+(\/#.+))$/
   if (pattern.test(url)) {
-    const hash = pattern.exec(url)?.filter(item => item).pop() ?? ""
+    const hash =
+      pattern
+        .exec(url)
+        ?.filter((item) => item)
+        .pop() ?? ""
     const id = hash.replace(/\/?#/, "")
     const el = document.getElementById(id)
     if (el) {
@@ -15,7 +19,6 @@ const smoothScrollLink = (url: string) => {
         offset: 0,
         duration,
       })
-
     }
   }
 

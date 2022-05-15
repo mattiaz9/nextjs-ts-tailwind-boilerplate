@@ -96,11 +96,7 @@ const Button: React.FC<ButtonProps> = ({
           data-redirect={hrefRedirect}
           onClick={hrefRedirect ? redirect : undefined}
         >
-          {loading ? (
-            <Spinner className={classes.buttonSpinner} />
-          ) : (
-            children
-          )}
+          {loading ? <Spinner className={classes.buttonSpinner} /> : children}
         </Link>
       ) : (
         <As
@@ -113,11 +109,7 @@ const Button: React.FC<ButtonProps> = ({
           onKeyDown={handleKeyDown}
           disabled={disabled ? true : false}
         >
-          {loading ? (
-            <Spinner className={classes.buttonSpinner} />
-          ) : (
-            children
-          )}
+          {loading ? <Spinner className={classes.buttonSpinner} /> : children}
         </As>
       )}
     </>

@@ -9,10 +9,12 @@ import NavbarLink from "./NavbarLink"
 import Link from "@components/common/Link"
 import Container from "@components/layout/Container"
 
-const navigation = [{
-  name: "home",
-  href: "/"
-}]
+const navigation = [
+  {
+    name: "home",
+    href: "/",
+  },
+]
 
 const Navbar: React.FC = () => {
   return (
@@ -21,14 +23,12 @@ const Navbar: React.FC = () => {
         <Container>
           <div className={classes.navbarWrapper}>
             {/* Logo */}
-            <Link to="/">
-              Logo
-            </Link>
+            <Link to="/">Logo</Link>
 
             {/* Nav */}
             <Disclosure.Panel
               className={classNames(classes.navbarNav, {
-                [classes.show]: open
+                [classes.show]: open,
               })}
               static
             >
@@ -42,11 +42,7 @@ const Navbar: React.FC = () => {
             {/* Mobile menu button */}
             <Disclosure.Button className={classes.navbarToggle}>
               <span className="sr-only">Open main menu</span>
-              {open ? (
-                <XIcon aria-hidden="true" />
-              ) : (
-                <MenuIcon aria-hidden="true" />
-              )}
+              {open ? <XIcon aria-hidden="true" /> : <MenuIcon aria-hidden="true" />}
             </Disclosure.Button>
           </div>
         </Container>

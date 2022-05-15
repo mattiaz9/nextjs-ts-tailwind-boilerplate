@@ -34,7 +34,7 @@ const useLocalStorage = <T>(
   const getValue = () => {
     try {
       const item = localStorage?.getItem(key)
-      return item ? JSON.parse(item) as T : defaultValue
+      return item ? (JSON.parse(item) as T) : defaultValue
     } catch (error) {
       console.log(error)
       return defaultValue

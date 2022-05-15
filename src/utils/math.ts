@@ -11,14 +11,8 @@ export const percentRelativeValue = (percent: number, relativeStart: number, rel
   return start / percent100
 }
 
-export const proportionalValue = (
-  val: number,
-  min: number,
-  max: number,
-  expectedMin: number,
-  expectedMax: number
-) => {
+export const proportionalValue = (val: number, min: number, max: number, expectedMin: number, expectedMax: number) => {
   const valStart = clamp(val - min, 0, max)
   const currentPercent = valStart / (max - min)
-  return expectedMin + (currentPercent * expectedMax)
+  return expectedMin + currentPercent * expectedMax
 }

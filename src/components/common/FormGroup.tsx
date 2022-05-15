@@ -9,20 +9,19 @@ type FormGroupProps = {
   half?: boolean
 }
 
-const FormGroup: React.FC<FormGroupProps> = ({
-  children,
-  label,
-  labelFor,
-  required,
-  half
-}) => {
+const FormGroup: React.FC<FormGroupProps> = ({ children, label, labelFor, required, half }) => {
   return (
-    <div className={classNames(classes.formGroup, {
-      [classes.half]: half
-    })}>
+    <div
+      className={classNames(classes.formGroup, {
+        [classes.half]: half,
+      })}
+    >
       <div className={classes.formGroupContent}>
         {label && (
-          <label htmlFor={labelFor}>{label}{required ? "*" : ""}</label>
+          <label htmlFor={labelFor}>
+            {label}
+            {required ? "*" : ""}
+          </label>
         )}
 
         {children}

@@ -11,14 +11,7 @@ type MarkdownProps = {
   onClick?(): void
 }
 
-const Markdown: React.FC<MarkdownProps> = ({
-  as: As = "div",
-  role,
-  className,
-  style,
-  rawMarkdown,
-  onClick,
-}) => {
+const Markdown: React.FC<MarkdownProps> = ({ as: As = "div", role, className, style, rawMarkdown, onClick }) => {
   const markdown = useMemo(() => {
     return microdown(rawMarkdown)
   }, [rawMarkdown])
